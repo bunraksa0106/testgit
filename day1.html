@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="text">SalaIT</h2>
+    <p>There are have IT course</p>
+    <p id="acourse"></p>
+    <script>
+        // const title=document.getElementById('text')
+        const acourse=document.getElementById('acourse')
+        const course=[
+            'Web Development',
+            'Mobile Development',
+            'Networking'
+        ]
+        let courselist=''
+        for(let i=0;i<course.length;i++){
+            courselist+=(i+1)+"."+course[i]+"<br />"
+            console.log(courselist)
+        }
+        acourse.innerHTML=courselist
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonder Login Form</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the body background and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* A beautiful gradient background */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        /* Custom focus style for better accessibility and design */
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4);
+            border-color: #818cf8;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <!-- Login Form Card -->
+    <div class="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 text-white">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold tracking-tight">Welcome Back</h1>
+            <p class="text-white/70 mt-2">Enter your credentials to access your account.</p>
+        </div>
+
+        <!-- Form -->
+        <form action="#" method="POST" class="space-y-6">
+
+            <!-- Email Input -->
+            <div>
+                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <!-- Email Icon SVG -->
+                        <svg class="h-5 w-5 text-white/50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                        </svg>
+                    </div>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                        class="form-input block w-full bg-white/10 rounded-lg border border-white/20 py-3 pl-10 pr-3 transition duration-300 placeholder-white/50 focus:border-white/50 focus:ring-0">
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium">Password</label>
+                    <a href="#" class="text-sm text-indigo-300 hover:text-indigo-200 transition">Forgot password?</a>
+                </div>
+                <div class="relative mt-2">
+                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <!-- Lock Icon SVG -->
+                        <svg class="h-5 w-5 text-white/50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                           <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password"
+                        placeholder="••••••••"
+                        required
+                        class="form-input block w-full bg-white/10 rounded-lg border border-white/20 py-3 pl-10 pr-10 transition duration-300 placeholder-white/50 focus:border-white/50 focus:ring-0">
+                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-white/50 hover:text-white/80">
+                        <!-- Eye Icon for showing password -->
+                        <svg id="eye-open" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                          <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.18l.88-1.473a1.65 1.65 0 012.899 0l.422.702a1.65 1.65 0 002.898 0l.422-.702a1.65 1.65 0 012.898 0l.88 1.473a1.651 1.651 0 010 1.18l-.88 1.473a1.65 1.65 0 01-2.898 0l-.422-.702a1.65 1.65 0 00-2.898 0l-.422.702a1.65 1.65 0 01-2.898 0l-.88-1.473zM10 15a5 5 0 100-10 5 5 0 000 10z" clip-rule="evenodd" />
+                        </svg>
+                        <!-- Eye-slash Icon for hiding password (hidden by default) -->
+                        <svg id="eye-closed" class="h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M3.28 2.22a.75.75 0 00-1.06 1.06l14.5 14.5a.75.75 0 101.06-1.06l-1.745-1.745a10.029 10.029 0 003.3-4.38 1.651 1.651 0 000-1.18l-.88-1.473a1.65 1.65 0 00-2.898 0L9.24 9.24l-1.47-1.47a1.65 1.65 0 00-2.898 0l-.88 1.473a1.651 1.651 0 000 1.18l.22.368a9.96 9.96 0 001.636 2.454L4.22 5.503 3.28 2.22zM7.5 10a2.5 2.5 0 015 0 2.5 2.5 0 01-5 0z" clip-rule="evenodd" />
+                          <path d="M12.5 10a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                    Sign In
+                </button>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <p class="mt-8 text-center text-sm text-white/60">
+            Not a member?
+            <a href="#" class="font-medium text-indigo-300 hover:text-indigo-200 transition">
+                Start a 14-day free trial
+            </a>
+        </p>
+    </div>
+
+    <script>
+        // JavaScript for the password visibility toggle
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const eyeOpen = document.getElementById('eye-open');
+        const eyeClosed = document.getElementById('eye-closed');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Toggle the eye icons
+            eyeOpen.classList.toggle('hidden');
+            eyeClosed.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

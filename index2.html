@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(240, 236, 236);
+  }
+  .calculator{
+    background: black;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+  }
+  .display{
+    color: white;
+    background: black;
+    border: none;
+    text-align: right;
+    font-size: 26px;
+    width: 100%;
+  }
+  .buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  button{
+    height: 50px;
+    font-size: 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  .gray{
+    background: rgb(176, 173, 173);
+  }
+  .yellow{
+    background: rgb(230, 151, 47);
+  }
+  .dark{
+    background: rgb(40, 39, 39);
+    color: white;
+  }
+  .zero{
+    grid-column: span 2;
+    border-radius: 50px;
+  }
+</style>
+<body>
+  <div class="calculator">
+    <input type="text"  value="0" id="display">
+    <div class="buttons">
+      <button class="gray" id="btnclear">AC</button>
+      <button class="gray">+/-</button>
+      <button class="gray">%</button>
+      <button class="yellow">/</button>
+      <button class="dark" id="btn7">7</button>
+      <button class="dark" id="btn8">8</button>
+      <button class="dark" id="btn9">9</button>
+      <button class="yellow">X</button>
+      <button class="dark" id="btn4">4</button>
+      <button class="dark" id="btn5">5</button>
+      <button class="dark" id="btn6">6</button>
+      <button class="yellow">-</button>
+      <button class="dark" id="btn1">1</button>
+      <button class="dark" id="btn2">2</button>
+      <button class="dark" id="btn3">3</button>
+      <button class="yellow" id="btnplus">+</button>
+      <button class="dark zero" id btn0>0</button>
+      <button class="dark">.</button>
+      <button class="yellow">=</button>
+    </div>
+  </div>
+  <script>
+    const display=document.getElementById('display');
+    const btn0=document.getElementById('btn0');
+    const btn1=document.getElementById('btn1');
+    const btnplus=document.getElementById('btnplus');
+    const btnclear=document.getElementById('btnclear');
+    function clearDisplay() {
+      display.value = '0';
+    }
+    function pressNumber(number) {
+      if (display.value === '0') {
+        display.value = number;
+      } else {
+        display.value += number;
+      }
+    }
+  </script>
+</body>
+</html>
